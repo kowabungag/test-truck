@@ -30,14 +30,12 @@ class truck extends auto
     {
       $result=$this->capacity-$car->weight;
       $this->capacity = $result;
-      if($this->capacity > 0)
+      if($this->capacity <= 0)
       {
-      } else
-        {
-            echo "Машина превысила лимит веса на" . " " . $this->capacity . ' ';
-            echo $car->name . '-';
-                echo $car->plate . '</br>';
-        }
+          echo "Машина превысила лимит веса на" . " " . $this->capacity . ' ';
+          echo $car->name . ' - ';
+          echo $car->plate . '</br>';
+      }
         return $this;
     }
 }
